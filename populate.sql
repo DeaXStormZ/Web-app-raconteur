@@ -1,0 +1,133 @@
+-- Some users
+INSERT INTO REGISTEREDUSER (LOGIN, PASSWORD)
+VALUES ('Capitain Flam', 'tunespat');
+INSERT INTO REGISTEREDUSER (LOGIN, PASSWORD)
+VALUES ('Dana', 'danslavallee');
+INSERT INTO REGISTEREDUSER (LOGIN, PASSWORD)
+VALUES ('maxime', 'ator');
+INSERT INTO REGISTEREDUSER (LOGIN, PASSWORD)
+VALUES ('Jean', 'peuxplus');
+INSERT INTO REGISTEREDUSER (LOGIN, PASSWORD)
+VALUES ('Pierre', 'quiroule');
+
+-- Story 1
+INSERT INTO STORY (IDSTORY, STORYTITLE, AUTHOR, HEADPARAGRAPH)
+VALUES (1, 'Une journée normale', 'Capitain Flam', 1);
+INSERT INTO ISACONTRIBUTOR (LOGIN, IDSTORY)
+VALUES ('Pierre', 1);
+INSERT INTO ISACONTRIBUTOR (LOGIN, IDSTORY)
+VALUES ('maxime', 1);
+INSERT INTO PUBLISHEDSTORY (IDSTORY)
+VALUES (1);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (1, 1, 'Il est 7h.', 'Dur réveil, mais c''est la routine. Je décide de boire quelque chose pour me réveiller.',
+        'Capitain Flam');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (1, 1);
+
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (1, 1, 0, 2);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (1, 2, 'Je prend un bon café.',
+        'Rien de tel qu''une boisson chaude pour démarrer la journée! Je me sens frais et réveillé, et quel beau temps, je pourrais peut-être prendre le vélo aujourd''hui?',
+        'Capitain Flam');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (1, 2);
+
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (1, 1, 0, 3);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (1, 3, 'Un bon jus d''orange frais fera l''affaire',
+        'Les oranges sont bien fraiches et bien sûr, que du bio! Encore un peu endormi, je sors de chez moi pour prendre le tram. Une fois devant la borne de validation, je me rend compte que j''ai oublié ma carte. Zut! Tant pis, je le prends, on verra bien',
+        'Capitain Flam');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (1, 3);
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (1, 3, 0, 4);
+
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (1, 2, 0, 4);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (1, 4, 'Je prend le tram comme d''habitude.',
+        'Le vélo attendra une autre fois. 20 minutes plus tard, je suis déjà devant l''école.', 'Pierre');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (1, 4);
+
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (1, 2, 0, 5);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (1, 5, 'La vie est trop courte pour hésiter, je prend mon vélo',
+        'Je file comme le vent, quel bonheur! Je me gare devant l''école.', 'maxime');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (1, 5);
+
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (1, 4, 0, 6);
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (1, 5, 0, 6);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (1, 6, 'Je rentre dans le bâtiment.', 'Il n''y a pas trop à hésiter ici non?', 'Pierre');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (1, 6);
+
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (1, 6, 5, 7);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (1, 7, 'Je passe aux toilettes avant d''aller en cours.', 'Ah, j''avais soif !', 'Pierre');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (1, 7);
+INSERT INTO CONCLUSIONPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (1, 7);
+
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (1, 6, 0, 8);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (1, 8, 'Je vais directement en cours.',
+        'Je suis impatient de découvrir ce que les professeurs nous ont réservé aujourd''hui!', 'Pierre');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (1, 8);
+INSERT INTO CONCLUSIONPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (1, 8);
+
+-- Story 2
+INSERT INTO STORY (IDSTORY, STORYTITLE, AUTHOR, HEADPARAGRAPH)
+VALUES (2, 'Une journée pas si normale', 'Dana', 1);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (2, 1, 'Je me réveille, il est 18h.',
+        'Enorme concert hier soir à l''ampé, encore une soirée dont on se rappellera! J''ai besoin de soigner ce mal de crâne.',
+        'Dana');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (2, 1);
+INSERT INTO PUBLISHEDSTORY (IDSTORY)
+VALUES (2);
+
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (2, 1, 0, 2);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (2, 2, 'Je prend un café simple pour me réveiller.',
+        'Ce n''est pas très efficace mais ça fera l''affaire. Je retourne me coucher',
+        'Dana');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (2, 2);
+INSERT INTO CONCLUSIONPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (2, 2);
+
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (2, 1, 0, 3);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (2, 3, 'Je prend un café double.', 'Je me sens un peu mieux, je décide de me faire à manger...', 'Dana');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (2, 3);
+INSERT INTO CONCLUSIONPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (2, 3);
+
+INSERT INTO CHOICE (IDSTORY, IDPARAGRAPH, CONDITION, NEXTPARAGRAPH)
+VALUES (2, 1, 0, 4);
+INSERT INTO PARAGRAPH (IDSTORY, IDPARAGRAPH, PARAGRAPHTITLE, TEXT, AUTHOR)
+VALUES (2, 4, 'Je prend un café-Red Bull',
+        'Et c''est reparti mon kiki!! Before chez bibi ce soir! Où en sont les autres? Faut aller racheter à boire! Y''a quoi au drak ce soir? Ouch, j''ai le coeur qui bat un peu vite quand même.',
+        'Dana');
+INSERT INTO VALIDATEDPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (2, 4);
+INSERT INTO CONCLUSIONPARAGRAPH (IDSTORY, IDPARAGRAPH)
+VALUES (2, 4);

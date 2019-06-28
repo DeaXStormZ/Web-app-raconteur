@@ -1,0 +1,21 @@
+supprimer un paragraphe supprime le choix correspondant
+
+Conditions sur un seul paragraphe
+Condition de passage : id de paragraphe. >0 pour une condition de passage et < 0 pour une condition de non passage
+
+Les histoires n'ont accès quà un seul paragraphe : celui de départ
+
+Pas possible de changer l'auteur d'une histoire
+
+Dans la bd : Story(headParagraph) n'est pas une référence pour ne pas créer de référence circulaire
+
+History : idHistory n'est pas nécessaire pour identifier un historique.
+
+Pour créer un historique on a besoin:
+    - Des choix ordonnés
+    - Du login
+    - De l'histoire concernée
+
+il n' y a pas d' invitations pour editer une histoire, tout le monde peut le faire.
+
+--> Il aurait été plus pertinent de laisser le modèle faire les appels à la base de donnée vie dao plutot que ce soit le controleur qui le fasse

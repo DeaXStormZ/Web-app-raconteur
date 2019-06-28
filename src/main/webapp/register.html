@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+</head>
+<body>
+
+<div id="connection_choice" class="green_bg">
+    <span class="connection_item">Inscription</span>
+
+    <form accept-charset="UTF-8" action="controller" method="post">
+
+        <div class="field">
+            Identifiant
+            <input type="text" name="login"/>
+        </div>
+
+        <div class="field">
+            Mot de passe
+            <input type="password" name="password"/>
+        </div>
+
+        <div class="field">
+            Confirmation
+            <input type="password" name="password_confirm"/>
+        </div>
+
+        <input type="hidden" name="action" value="register">
+
+        <input name="connect_button" class="fancy_button confirm_button" type="submit" value="S'inscrire"/>
+    </form>
+
+</div>
+</body>
+</html>

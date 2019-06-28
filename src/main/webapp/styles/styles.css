@@ -1,0 +1,232 @@
+@font-face {
+    font-family: BemboStd;
+    src: url("BemboStd.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Cantarell Light";
+    src: url("Cantarell-Light.otf") format("opentype");
+}
+
+
+body {
+    font-family: "Cantarell Light", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-weight: normal;
+}
+
+input[type="text"] {
+    font-family: "Cantarell Light", sans-serif;
+}
+
+label {
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+
+input {
+    display: inline-block;
+    float: left;
+}
+
+
+#page_block {
+    width: 550px;
+    margin: auto;
+}
+
+#search_form {
+    background-color: darkolivegreen;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 5px;
+    padding-right: 3px;
+
+}
+
+#connection_choice {
+    font-family: "Cantarell Light", sans-serif;
+    width: 400px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 130%;
+    padding: 5px 10px;
+    margin: 4px 2px;
+    text-align: center;
+
+}
+
+#connection_choice input[type="text"],
+#connection_choice input[type="password"] {
+    width: 220px;
+}
+
+
+.failure {
+    font-family: "Cantarell Light", sans-serif;
+    width: 400px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #8b121d;
+    color: white;
+    font-size: 130%;
+    padding: 20px 10px;
+    margin: 4px 2px;
+    text-align: center;
+}
+
+.failure a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.field {
+    display: flex;
+    justify-content: space-between;
+    margin: 3%;
+}
+
+.story_body {
+    font-family: BemboStd, serif;
+    font-weight: normal;
+    font-size: 105%;
+}
+
+.story_body p {
+    text-indent: 25px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.story_body h1,
+.story_body h2,
+.story_body h3,
+.story_body h4,
+.story_body h5,
+.story_body h6 {
+    font-weight: inherit;
+}
+
+.framed {
+    border: 1px solid black;
+    text-align: justify;
+    padding: 12px;
+    margin: auto auto 20px;
+}
+
+.fancy_button {
+    font-family: inherit;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.confirm_button {
+    background-color: white;
+    color: darkolivegreen;
+    float: right;
+    margin: 3%;
+}
+
+.connection_item {
+    height: 100px;
+    width: 300px;
+    font-size: 150%;
+    margin: 0;
+}
+
+.menu {
+    font-family: "Cantarell Light", sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+}
+
+.light_green_bg {
+    background-color: #139713;
+}
+
+.green_bg {
+    background-color: #1c741c;
+}
+
+.dark_green_bg {
+    background-color: #175c17;
+}
+
+.sober_button {
+    font-family: "Cantarell Light", sans-serif;
+    background-color: white;
+    float: right;
+    border: 1px solid black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+.read_followup {
+    color: black;
+    text-decoration: underline;
+    font-family: "Cantarell Light", sans-serif;
+}
+
+.mid_sized_button {
+    font-family: "Cantarell Light", sans-serif;
+    color: white;
+    background-color: #3c8a4b;
+    border: 1px solid #175c17;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 4px;
+    margin-right: 2px;
+    font-size: 130%;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.center {
+    text-align: center;
+}
+
+.paragraph_edit_field {
+    resize: horizontal;
+    height: 800px;
+    width: 550px;
+}
+
+.all_width {
+    width: 100%;
+}
+
+.shift_down {
+    transform: translate(0, 800px);
+}
+
+.home_button {
+    float: right;
+}
