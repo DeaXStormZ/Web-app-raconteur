@@ -157,6 +157,7 @@ public class Controller extends HttpServlet {
                 break;
             case "disconnect":
                 request.getRequestDispatcher("index.html").forward(request, response);
+                break;
             default:
                 throw new UnsupportedOperationException("post called on invalid action\"" + action + "\"");
         }

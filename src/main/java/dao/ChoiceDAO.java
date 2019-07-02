@@ -57,6 +57,7 @@ public class ChoiceDAO extends AbstractDataBaseDAO {
             PreparedStatement st = conn.prepareStatement("SELECT * FROM CHOICE " +
                     "WHERE IDCHOICE = ? AND IDPARAGRAPH = ? AND IDSTORY = ?");
             ResultSet rs = choiceQuery(st, idStory, idParagraph, idChoice);
+            st.close();
             if (!rs.next())
                 return null;
             int condition = rs.getInt("condition");
@@ -67,8 +68,6 @@ public class ChoiceDAO extends AbstractDataBaseDAO {
                     "WHERE IDSTORY = ? AND IDPARAGRAPH = ? AND IDCHOICE = ?");
             ResultSet rsLocked = choiceQuery(stLocked, idStory, idParagraph, idChoice);
             boolean isLocked = rsLocked.next();
-            conn.close();
-            ParagraphDAO paragraphDAO = new ParagraphDAO(getDataSource());
             conn.close();
             return new Choice(idStory, idChoice, condition, idNextParagraph,
                     idCurrentParagraph, isLocked);
